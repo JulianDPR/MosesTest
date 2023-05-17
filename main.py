@@ -59,7 +59,8 @@ def MosesTest(x,y,a,extreme=0):
 
     R = t(r,m,extreme,n,a)
 
-    dic = {"S*":s_,"P(Wh<=S*)":valor_p, "R(S*<=Wa)":f"{s_}<={R}"}
+    dic = {"S*":s_,"P(Wh<=S*)":valor_p, "Rc=(Robs<=R)":f"{r}<={R}",
+           "cdfR":cdf(R,m,extreme,n)}
 
     print(dic)
 
@@ -68,6 +69,6 @@ def MosesTest(x,y,a,extreme=0):
 x = [21,21.4,22.5,23.6,25.8,25.9,27,27.8,30.1,30.5,33.7,34.8,35.1,35.3,38.9,45]
 y = [17.4,18.6,19.1,22.3,24.7,25.2,26.1,27.1,28,29.5,30.3,30.4]
 
-print(MosesTest(x,y,0.5))
+print(MosesTest(x,y,0.05,4))
 
 
