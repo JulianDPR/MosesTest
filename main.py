@@ -59,7 +59,7 @@ def MosesTest(x,y,a,extreme=0):
 
     R = t(r,m,extreme,n,a)
 
-    dic = {"S*":s_,"P(Wh<=S*)":valor_p, "Rc=(Robs<=R)":f"{r}<={R}",
+    dic = {"Robs":r,"P(Wh<=Robs*)":valor_p, "Rc=(Robs<=R)":f"{r}<={R}",
            "cdfR":cdf(R,m,extreme,n)}
 
     print(dic)
