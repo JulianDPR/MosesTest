@@ -48,6 +48,8 @@ def MosesTest(x,y,a,extreme=0):
     indexer = np.cumsum((f["is"]=="x")[::-1])<=extreme
     f.loc[indexer,"is"]="h"
 
+    print("Variables ordenadas \n \n",f.transpose())
+
     inf = f.index[f["is"]=="x"][0]
     sup = f.index[f["is"]=="x"][-1]
     s_ = sup-inf+1
@@ -64,9 +66,21 @@ def MosesTest(x,y,a,extreme=0):
 
     return pd.DataFrame(dic.values(), index=dic.keys(), columns=["Results"]).transpose()
 
-x = [21,21.4,22.5,23.6,25.8,25.9,27,27.8,30.1,30.5,33.7,34.8,35.1,35.3,38.9,45]
-y = [17.4,18.6,19.1,22.3,24.7,25.2,26.1,27.1,28,29.5,30.3,30.4]
+#x = [21,21.4,22.5,23.6,25.8,25.9,27,27.8,30.1,30.5,33.7,34.8,35.1,35.3,38.9,45]
+#y = [17.4,18.6,19.1,22.3,24.7,25.2,26.1,27.1,28,29.5,30.3,30.4]
 
-print(MosesTest(x=x,y=y,a=0.05,extreme=4))
+#print(MosesTest(x=x,y=y,a=0.05,extreme=4).to_latex())
 
+#x = [1.7,2.7,1.8,2.8,1.9,3.1,2.2,3.6,3.7]
+#y = [1.3,3.5,1.5,3.8,1.6,4.5,3.4,6.7]
 
+#print(MosesTest(x=x,y=y,a=0.1,extreme=2).to_latex())
+
+#x = [5.86,5.46,5.69,6.49,7.81,9.03,7.49,8.98]
+#y = [8.18,5.64,7.36,5.33,8.82,5.26,7.1]
+
+#print(MosesTest(x=x,y=y,a=0.05,extreme=1).to_latex())
+
+#import pandas as pd
+
+#print(pd.DataFrame([x,y], index = ["x","y"]).transpose().to_latex())
