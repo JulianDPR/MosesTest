@@ -1,10 +1,10 @@
-import pandas as pd
-import numpy as np
-import scipy.stats as ss
-
 
 def MosesTest(x,y,a,extreme=0):
 
+    import pandas as pd
+    import numpy as np
+    import scipy.stats as ss
+    
     def factorial(x):
         y = 1
         for i in range(1,x+1):
